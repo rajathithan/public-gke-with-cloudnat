@@ -1,0 +1,4 @@
+nonMasqueradeCIDRs:
+  - 0.0.0.0/0
+masqLinkLocal: true
+resyncInterval: 60s
