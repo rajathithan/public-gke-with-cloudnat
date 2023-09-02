@@ -1,8 +1,8 @@
-gcloud container clusters get-credentials gke-cluster-1 --region us-central1 --project still-primer-394414
+gcloud container clusters get-credentials gke-cluster-1 --region us-central1 --project <<project-id>>
 kubectl create ns cloudnat
 kubectl apply -f deployment.yaml -n cloudnat
 kubectl create configmap ip-masq-agent --from-file ip-masq-config.yaml --namespace kube-system
 kubectl apply -f ip-masq-daemonset.yaml
 
-gcloud container clusters get-credentials gke-cluster-1 --region us-central1 --project still-primer-394414 \
+gcloud container clusters get-credentials gke-cluster-1 --region us-central1 --project <<project-id>> \
  && kubectl port-forward --namespace cloudnat $(kubectl get pod --namespace cloudnat --selector="name=flask-app,pod-template-hash=55d95cf85c" --output jsonpath='{.items[0].metadata.name}') 8080:8080
