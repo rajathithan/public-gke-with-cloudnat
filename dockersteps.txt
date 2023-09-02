@@ -1,4 +1,4 @@
 gcloud auth configure-docker us-central1-docker.pkg.dev
-docker build -t us-central1-docker.pkg.dev/still-primer-394414/staticiptest/gkestaticip:v1 .
-docker run --rm -p 8080:8080 us-central1-docker.pkg.dev/still-primer-394414/staticiptest/gkestaticip:v1
-docker push us-central1-docker.pkg.dev/still-primer-394414/staticiptest/gkestaticip:v1
+docker build -t us-central1-docker.pkg.dev/<<project-id>>/staticiptest/gkestaticip:v1 .
+docker run --rm -p 8080:8080 us-central1-docker.pkg.dev/<<project-id>>/staticiptest/gkestaticip:v1
+docker push us-central1-docker.pkg.dev/<<project-id>>/staticiptest/gkestaticip:v1
